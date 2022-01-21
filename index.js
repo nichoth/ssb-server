@@ -4,7 +4,9 @@ var caps = require('ssb-caps')
 // create a sbot with default caps. these can be overridden again when you call create.
 function createSsbServer () {
   return SecretStack({ caps })
-    .use(require('ssb-db'))
+    .use(require('ssb-db2'))
+    .use(require('ssb-db2/compat')) // include all compatibility plugins
+    // .use(require('ssb-db'))
 }
 module.exports = createSsbServer()
 
